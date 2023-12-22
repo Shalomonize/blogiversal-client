@@ -28,8 +28,8 @@
                      DOCKER_PASSWORD: ${{ secrets.DOCKERHUB_TOKEN }}
                      IMAGE_NAME: ${{ secrets.DOCKER_USERNAME }}/client:${{github.run_number}}
                    run: |
-                     docker build -t $IMAGE_NAME .
-                     docker push $IMAGE_NAME
+                     sudo docker build -t $IMAGE_NAME .
+                     sudo docker push $IMAGE_NAME
            
                  - name: Deploy to EC2 instance
                    uses: appleboy/ssh-action@master
